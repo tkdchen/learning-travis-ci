@@ -12,6 +12,11 @@ deploy:
     tags: true
     branch: develop
 - provider: script
+  script: sh build-rpm-in-copr.sh
+  on:
+    tags: true
+    branch: develop
+- provider: script
   script: sh publish-image.sh
   on:
     tags: true
