@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
 	name='learning-travis-ci',
-	version='0.6',
+	version='0.7',
 	author='Chenxiong Qi',
 	author_email='qcxhome@gmail.com',
 	license='mit',
