@@ -1,10 +1,16 @@
 language: python
 script: echo hello world
 deploy:
-  provider: pypi
+- provider: pypi
   username: __token__
   password:
     secure: Q0DcgGKpYjLekvOLQsUrY/2V4Vp/0VZld1pgYmEPejOASuAcCL+sRCsz9Rkj/785/zSRXWpU45RnzsvAr48FHdoHXdJhzjAQXQgdLM6S4hAGVVwjce8YGwTx/SPUTOTjeq6smzWDzRozKk6ZB7ivPcJS8vx9BRLTYBJuT/hnpoudZ0m4mFtlYhXKDwWa/mWIAq+U3H2QmDrhJm5iApK7A0tMS93CMnyZnVg1vSuVPbjQ95mkrmxEc9vS+MiiGAGd86DcOci1wIQoWIEE/glLUMDQVbT8Taems7SRRugPzJxrtYi6pxwbUJ+ZZ0HV3cY0mp4i7u7zDAOPMz3qaprMTcZnnElIo4L3TWSwlAjquuS47FnJw55eiYXBCDuGZMJuCOc3sb1DInc4g3Vf1ERRQvsA5G4DAIhaXYSXuMhh1I2if+GeflNFuHqOXptbdHNZ03FJpsU74g1xZrlGvRDWLuQPPYG5e38mZlxpqOSoV58VttH5cpIAfKLJAhaAdKG1a9K9a3xa7g3RPXV051AP7PX6gbJQfgXd1LSlq5xKqj8U/n3NKbQ/LPslV7kMzv2KLKGhz2SGJlfLl+ZKS7xSeh91n1IadbhEUsYUbrYXNlsNhAJVOYzZSFLekq88c1m7kFGTbelngWJKf3IxZ2ZSX7qxbHnMnsWyT0SyNOegKzk=
   on:
     # TODO: try release from develop branch
     tags: true
+    branch: develop
+- provider: script
+  script: echo current tag $TRAVIS_TAG
+  on:
+    tags: true
+    branch: develop
