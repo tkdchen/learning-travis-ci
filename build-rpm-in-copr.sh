@@ -19,7 +19,7 @@ docker run -v $(pwd):/code:Z --rm -it registry.fedoraproject.org/fedora:32 /bin/
              --define '_rpmdir /code/dist' \
              -bs coolempty.spec
 
-    srpmfile=\$(rpm -q --queryformat='%{NVR}' --specfile coolempty.spec)
+    srpmfile=\$(rpm -q --queryformat='%{NVR}' --specfile coolempty.spec).src.rpm
 
     copr-cli --config /code/copr-cli.conf build cqi/fake-empty-package /code/dist/\$srpmfile
 "

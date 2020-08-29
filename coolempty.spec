@@ -1,5 +1,5 @@
 Name:           coolempty
-Version:        0.11
+Version:        0.12
 Release:        1%{?dist}
 Summary:        Cool empty package
 
